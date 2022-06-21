@@ -226,7 +226,10 @@ function utils.get_executable_package(packages, args)
     for _, executable in ipairs(executables) do
       table.insert(available_names, executable.target.name)
     end
-    utils.notify('Could not determine which binary to run\nUse the `--bin` or `--package` option to specify a binary\nAvailable binaries: ' .. table.concat(available_names, ', '), vim.log.levels.ERROR)
+    utils.notify(
+      'Could not determine which binary to run\nUse the `--bin` or `--package` option to specify a binary\nAvailable binaries: ' .. table.concat(available_names, ', '),
+      vim.log.levels.ERROR
+    )
     return
   end
 
