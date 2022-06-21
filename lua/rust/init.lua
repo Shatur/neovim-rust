@@ -64,8 +64,8 @@ end
 
 function rust.set_args(subcommand)
   local project_config = ProjectConfig.new()
-  vim.ui.input({ prompt = 'Arguments for ' .. subcommand .. ': ', default = project_config.json.type or '', completion = 'file' }, function(input)
-    project_config.json.args[subcommand] = input
+  vim.ui.input({ prompt = 'Arguments for ' .. subcommand .. ': ', default = utils.join_args(project_config.json.type) or '', completion = 'file' }, function(input)
+    project_config.json.args[subcommand] = utils.split_args(input)
     project_config:write()
   end)
 end
