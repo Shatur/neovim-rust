@@ -173,7 +173,7 @@ function utils.run(cmd, args)
     return
   end
 
-  if config.save_before_build and cmd == config.cmake_executable then
+  if config.save_before_build and cmd == 'cargo' then
     save_all_buffers()
   end
 
