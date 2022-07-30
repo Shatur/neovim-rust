@@ -4,9 +4,7 @@ local dap = require('dap')
 local ProjectConfig = require('rust.project_config')
 local rust = {}
 
-function rust.setup(values)
-  setmetatable(config, { __index = vim.tbl_deep_extend('force', config.defaults, values) })
-end
+function rust.setup(values) setmetatable(config, { __index = vim.tbl_deep_extend('force', config.defaults, values) }) end
 
 function rust.cargo(subcommand, ...)
   local project_config = ProjectConfig.new()

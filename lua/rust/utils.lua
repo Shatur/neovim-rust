@@ -112,9 +112,7 @@ local function read_to_quickfix()
         -- Move lines to another variable and send them to quickfix
         local processed_lines = lines
         lines = {}
-        vim.schedule(function()
-          append_to_quickfix(processed_lines)
-        end)
+        vim.schedule(function() append_to_quickfix(processed_lines) end)
       end
 
       if data == nil or is_complete then
@@ -126,9 +124,7 @@ local function read_to_quickfix()
   end)
 end
 
-function utils.notify(msg, log_level)
-  vim.notify(msg, log_level, { title = 'Rust' })
-end
+function utils.notify(msg, log_level) vim.notify(msg, log_level, { title = 'Rust' }) end
 
 function utils.split_args(args)
   if not args then
