@@ -34,6 +34,7 @@ To configure the plugin, you can call `require('rust').setup(values)`, where `va
 local Path = require('plenary.path')
 require('rust').setup({
   parameters_file = 'neovim.json', -- JSON file to store information about selected target, run arguments and build type.
+  default_parameters = { args = { global = {} } }, -- The default values in `parameters_file`.
   save_before_build = true, -- Save all buffers before building.
   on_build_output = nil, -- Callback that will be called each time data is received by the current process. Accepts the received data as an argument.
   quickfix = {

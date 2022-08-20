@@ -1,6 +1,7 @@
 local config = {
   defaults = {
     parameters_file = 'neovim.json',
+    default_parameters = { args = { global = {} } },
     save_before_build = true,
     on_build_output = nil,
     quickfix = {

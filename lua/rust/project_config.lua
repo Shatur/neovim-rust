@@ -3,12 +3,6 @@ local Path = require('plenary.path')
 local ProjectConfig = {}
 ProjectConfig.__index = ProjectConfig
 
-local json_defaults = {
-  args = {
-    global = {},
-  },
-}
-
 function ProjectConfig.new()
   local project_config = {}
   local parameters_file = Path:new(config.parameters_file)
@@ -17,7 +11,7 @@ function ProjectConfig.new()
   else
     project_config.json = {}
   end
-  project_config.json = vim.tbl_extend('keep', project_config.json, json_defaults)
+  project_config.json = vim.tbl_extend('keep', project_config.json, config.default_parameters)
   return setmetatable(project_config, ProjectConfig)
 end
 
