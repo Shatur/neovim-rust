@@ -51,7 +51,7 @@ The mentioned `parameters_file` will be created for every project with the follo
 
 ```jsonc
 {
-  "args": {} // A dictionary with subcommand names and their arguments specified as an array.
+  "args": {"run": ["arg1", "arg2"]} // A dictionary with subcommand names and their arguments specified as an array.
 }
 ```
 
