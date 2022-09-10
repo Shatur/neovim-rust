@@ -1,5 +1,7 @@
 # Neovim Rust
 
+**This plugin has been deprecated in favor of [neovim-tasks](https://github.com/Shatur/neovim-tasks)**. I realized that having separate plugins for each build system is inconvenient, so I decided to write a general purpose plugin that could support support any build system.
+
 A Neovim 0.7+ plugin that to provides integration with building, running and debugging projects with output to quickfix.
 
 ## Dependencies
